@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "lab-runs",
+    "kind": "interactive",
+    "goal": "The simulation runs without sign-in, time controls and events work, and the English language choice survives a reload",
+    "requirementIndexes": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      31,
+      32
+    ],
+    "acceptanceCriteriaIndexes": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      8,
+      11,
+      12
+    ],
+    "steps": [
+      "Press EN in the language toggle",
+      "Press Pause in the time controls",
+      "Press Step in the time controls",
+      "Press 25x in the time controls",
+      "Open the Environment tab",
+      "Press Drought",
+      "Open the Dashboard tab",
+      "Reload the page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Herbivore"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Resume"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Predator"
+      },
+      {
+        "afterStep": 3,
+        "expectText": "25x"
+      },
+      {
+        "afterStep": 4,
+        "expectText": "Drought"
+      },
+      {
+        "afterStep": 5,
+        "expectText": "Herbivore"
+      },
+      {
+        "afterStep": 5,
+        "assert": "The drought event is shown as active and the timeline records it"
+      },
+      {
+        "afterStep": 6,
+        "expectText": "Herbivore"
+      },
+      {
+        "afterStep": 7,
+        "expectText": "Herbivore"
+      },
+      {
+        "afterStep": 7,
+        "assert": "Organisms keep moving on the canvas without any interaction"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-20T17:26:32.716Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Trigger\" in \"Drought\"",
+        "target": {
+          "role": "button",
+          "name": "Trigger",
+          "within": "Drought"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "lab-runs.e2e.ts::lab-runs",
+      "targetId": "web",
+      "instructionDigest": "486bbd3118b0a59abeb7b267aed085c88890ab04e0d46885d27dadeb1ead2f3a",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "anthropic.messages",
+      "model": "claude-opus-5-5"
+    },
+    "summary": "I pressed Trigger on the Drought event. A toast confirmed \"Event triggered: Drought ×0.25 · 600 cycles\", the Active count went from 0 to 1, and Drought ×0.25 now shows as active with \"600 cycles left\".",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "text": "Drought×0.25"
+      },
+      {
+        "text": "600 cycles left"
+      },
+      {
+        "text": "Event triggered: Drought"
+      },
+      {
+        "text": "×0.25 · 600 cycles"
+      },
+      {
+        "role": "listitem",
+        "name": "Close toast Event triggered: Drought ×0.25 · 600 cycles"
+      },
+      {
+        "role": "button",
+        "name": "Close toast"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "0"
+      }
+    ],
+    "endWaitMs": 13457,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

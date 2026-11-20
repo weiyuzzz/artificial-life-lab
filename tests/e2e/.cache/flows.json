@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "flows": {
+    "lab-runs": {
+      "flowId": "lab-runs",
+      "specDigest": "711709ee0631c8e3120714d2752e35436e27405e87ac4f97795784627cea37bf",
+      "status": "recorded",
+      "recordedAt": "2026-11-20T17:28:37.437Z",
+      "recordedBy": "claude-opus-5-5",
+      "entries": [
+        "e8da0a0e759dec3b6523f847c244074871237e9227a8021717016facf485ffe1.json",
+        "caf2dd81ce493bfcb8f5999cb2e14609af297a5d6114c46a09bfc3c30a54a601.json",
+        "20afff2f50f5188135bf8c6674f3ed70d58b9c5542868119747a70d1f34c6d57.json",
+        "c3c67908e975f98f047dff467c7154eabcce0fe6518f902d22016da962fa5432.json",
+        "30816ecca4c179c9de1bafa4e49007c91b24ebe789728ed62fe1619d004746ef.json",
+        "d480f1e2019741662749f6edfffe05f3e0d6bc6cd364eac19b86eb17ff56189d.json",
+        "4a2b29936c1108286f0ac13eb57e524da8524457f8e437da4a550cbfd095a88e.json"
+      ],
+      "ranAfter": [],
+      "ranWith": [],
+      "readOnly": true
+    },
+    "save-experiment": {
+      "flowId": "save-experiment",
+      "specDigest": "f03f3013ae116827eca233aca8ef60b804a265b551b1ae6f805d4f380e7a0f2f",
+      "status": "recorded",
+      "recordedAt": "2026-11-20T17:28:37.438Z",
+      "recordedBy": "claude-opus-5-5",
+      "entries": [
+        "a52da35d7a1c6c05b1505e451e727191352b05fda0ab8a022044ae2c96577ab1.json",
+        "fa845a834d907502024534085d9ae418f1fd207b72da91ad5d0cba72528f30f5.json",
+        "2a87fb1a975057c976f89d2ca1f0046854626e324ba002441a05760959a0ca28.json",
+        "1d8dec341190ff1a9bda165de4aa7bd4b563609003028e281d234dec546058bc.json",
+        "98e551db5c069a66737f9a4f21251339820979cf96fbdf50c28d8efd69a416be.json"
+      ],
+      "noChangeSteps": [
+        6
+      ],
+      "ranAfter": [
+        "lab-runs"
+      ],
+      "ranWith": [
+        "lab-runs"
+      ]
+    },
+    "second-user-private": {
+      "flowId": "second-user-private",
+      "specDigest": "ddc48ab421c37067d7c7fda44967d8c1b9cbc8af4f60fdd1f046c5d68492582b",
+      "status": "recorded",
+      "recordedAt": "2026-11-20T17:28:37.439Z",
+      "recordedBy": "claude-opus-5-5",
+      "entries": [
+        "6049f34c95e8e12aeae3f12b9e6db37e1e45587d690ab3b612a83e405eb20255.json",
+        "65abc0b205e83dce548672921c7e3c4071272ad4a5da3da6f43478c15ae6b288.json",
+        "20e946b3d7ccb722985c6bffd7a09b2f18f5c27f97d0fb2cf5a2849ef59f382a.json"
+      ],
+      "ranAfter": [
+        "lab-runs",
+        "save-experiment"
+      ],
+      "ranWith": [
+        "lab-runs",
+        "save-experiment"
+      ]
+    }
+  }
+}

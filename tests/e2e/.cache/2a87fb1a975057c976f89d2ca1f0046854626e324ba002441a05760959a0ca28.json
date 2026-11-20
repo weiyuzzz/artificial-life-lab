@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-20T17:27:45.247Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap tab \"Experiment\"",
+        "target": {
+          "role": "tab",
+          "name": "Experiment"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "save-experiment.e2e.ts::save-experiment",
+      "targetId": "web",
+      "instructionDigest": "e2ce72b852fc8f70134665d046c39539d8f95fea54a8f99671ef1332a80a5091",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "anthropic.messages",
+      "model": "claude-opus-5-5"
+    },
+    "summary": "I opened the Experiment tab. It is now selected and shows the \"Current experiment\" panel with \"Unsaved run\", seed 20260101, and a \"New experiment\" button. It also has Auto snapshot settings and Export and Import buttons.",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "text": "1,388"
+      },
+      {
+        "role": "heading",
+        "name": "Current experiment"
+      },
+      {
+        "text": "Unsaved run"
+      },
+      {
+        "text": "Seed"
+      },
+      {
+        "role": "button",
+        "name": "New experiment"
+      },
+      {
+        "text": "Auto snapshot"
+      },
+      {
+        "text": "Every 1000 cycles"
+      },
+      {
+        "text": "Keep latest 5"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "1,162"
+      },
+      {
+        "role": "heading",
+        "name": "Inspector"
+      },
+      {
+        "text": "Click an organism on the canvas to inspect it."
+      },
+      {
+        "role": "tab",
+        "name": "Inspector",
+        "states": [
+          "selected"
+        ]
+      },
+      {
+        "role": "tab",
+        "name": "Experiment"
+      },
+      {
+        "role": "tabpanel",
+        "name": "Inspector"
+      }
+    ],
+    "endWaitMs": 15099,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

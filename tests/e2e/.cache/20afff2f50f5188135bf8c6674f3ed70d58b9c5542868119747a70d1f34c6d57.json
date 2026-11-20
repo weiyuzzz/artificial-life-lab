@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-20T17:26:32.710Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Step\" in \"Cycle\"",
+        "target": {
+          "role": "button",
+          "name": "Step",
+          "within": "Cycle"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "lab-runs.e2e.ts::lab-runs",
+      "targetId": "web",
+      "instructionDigest": "40b70acd77f7ff14a4c75155feb50bc6ea9d6d9ac31134208c48dea54e5bf54b",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "anthropic.messages",
+      "model": "claude-opus-5-5"
+    },
+    "summary": "I pressed Step in the time controls. The cycle went from 354 to 356 and Plants changed from 586 to 583. The simulation still shows as Paused, with the button reading \"Resume\".",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "text": "356"
+      },
+      {
+        "text": "583"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "354"
+      },
+      {
+        "text": "586"
+      }
+    ],
+    "endWaitMs": 14435,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

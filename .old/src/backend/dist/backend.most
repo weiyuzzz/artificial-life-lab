@@ -1,0 +1,150 @@
+// Version: 4.0.0
+type AccessControlState__201339279 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__175655829<Principal, UserRole__91647283>
+  };
+type ApprovalStatus__982498703 = {#approved; #pending; #rejected};
+type Data__1061330525<K, V> =
+  {var count : Nat__565224867; kvs : [var ?(K, V)]};
+type ExperimentId__973215962 = Nat;
+type Experiment__443023721 =
+  {
+    createdAt : Int;
+    cycle : Nat;
+    envParams : Text;
+    id : Nat;
+    name : Text;
+    owner : Principal;
+    populationConfig : Text;
+    seed : Nat;
+    summary : Text;
+    updatedAt : Int
+  };
+type Experiment__80697101 =
+  {
+    createdAt : Timestamp__301639476;
+    cycle : Nat;
+    envParams : Text;
+    id : ExperimentId__973215962;
+    name : Text;
+    owner : Principal;
+    populationConfig : Text;
+    seed : Nat;
+    summary : Text;
+    updatedAt : Timestamp__301639476
+  };
+type Int__326488490 = Int__616954475;
+type Int__616954475 = Int;
+type Internal__1060388275<K, V> =
+  {children : [var ?Node__1010487028<K, V>]; data : Data__1061330525<K, V>};
+type Invite__556842471 =
+  {
+    createdAt : Time__947132877;
+    createdBy : Principal;
+    expiresAt : ?Time__947132877;
+    maxUses : ?Nat;
+    name : Text;
+    var redemptions : [Redemption__1040467832];
+    var revoked : Bool
+  };
+type InvitesState__511333982 =
+  {var invites : Map__175655829<Text, Invite__556842471>};
+type Leaf__8515789<K, V> = {data : Data__1061330525<K, V>};
+type Map__175655829<K, V> = Map__975833162<K, V>;
+type Map__925935234<K, V> =
+  {var root : Node__1010487028<K, V>; var size : Nat__565224867};
+type Map__975833162<K, V> = Map__925935234<K, V>;
+type Nat__565224867 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__769816496 =
+  {
+    accessControlState : AccessControlState__201339279;
+    approvalState : UserApprovalState__266451338;
+    counters : {var nextExperimentId : Nat; var nextSnapshotId : Nat};
+    experiments : Map__175655829<Nat, Experiment__443023721>;
+    invitesState : InvitesState__511333982;
+    snapshotParts : Map__175655829<Nat, Map__175655829<Nat, Text>>;
+    snapshots : Map__175655829<Nat, SnapshotMeta__409088407>;
+    statChunks :
+      Map__175655829<Nat, Map__175655829<Nat, StatChunk__178217754>>
+  };
+type Node__1010487028<K, V> =
+  {#internal : Internal__1060388275<K, V>; #leaf : Leaf__8515789<K, V>};
+type OldActor__512397517 = {};
+type Redemption__1040467832 = {at : Time__947132877; user : Principal};
+type SnapshotId__360585103 = Nat;
+type SnapshotMeta__13346161 =
+  {
+    auto : Bool;
+    caption : Text;
+    createdAt : Timestamp__301639476;
+    cycle : Nat;
+    experimentId : ExperimentId__973215962;
+    id : SnapshotId__360585103;
+    partCount : Nat
+  };
+type SnapshotMeta__409088407 =
+  {
+    auto : Bool;
+    caption : Text;
+    createdAt : Int;
+    cycle : Nat;
+    experimentId : Nat;
+    id : Nat;
+    partCount : Nat
+  };
+type StatChunk__178217754 =
+  {chunkIndex : Nat; createdAt : Int; data : Text; experimentId : Nat};
+type StatChunk__271585517 =
+  {
+    chunkIndex : Nat;
+    createdAt : Timestamp__301639476;
+    data : Text;
+    experimentId : ExperimentId__973215962
+  };
+type Time__504000406 = Int__326488490;
+type Time__947132877 = Time__504000406;
+type Timestamp__301639476 = Int;
+type UserApprovalState__266451338 =
+  {var approvalStatus : Map__175655829<Principal, ApprovalStatus__982498703>};
+type UserRole__91647283 = {#admin; #guest; #user};
+{
+  "00000000_000000" : OldActor__512397517 -> NewActor__769816496
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__175655829<Principal, UserRole__91647283>
+    };
+  stable approvalState :
+    {
+      var approvalStatus :
+        Map__175655829<Principal, ApprovalStatus__982498703>
+    };
+  stable counters : {var nextExperimentId : Nat; var nextSnapshotId : Nat};
+  stable experiments :
+    {
+      var root : Node__1010487028<Nat, Experiment__80697101>;
+      var size : Nat__565224867
+    };
+  stable invitesState :
+    {var invites : Map__175655829<Text, Invite__556842471>};
+  stable snapshotParts :
+    {
+      var root : Node__1010487028<Nat, Map__175655829<Nat, Text>>;
+      var size : Nat__565224867
+    };
+  stable snapshots :
+    {
+      var root : Node__1010487028<Nat, SnapshotMeta__13346161>;
+      var size : Nat__565224867
+    };
+  stable statChunks :
+    {
+      var root :
+        Node__1010487028<Nat, Map__175655829<Nat, StatChunk__271585517>>;
+      var size : Nat__565224867
+    }
+};

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-20T17:28:37.346Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Experiments\"",
+        "target": {
+          "role": "link",
+          "name": "Experiments"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "second-user-private.e2e.ts::second-user-private",
+      "targetId": "web",
+      "instructionDigest": "325cba08eab34bb7bcb7af2553975cf57e6772b579bc6192ec6d9134a66b9e46",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "anthropic.messages",
+      "model": "claude-opus-5-5"
+    },
+    "summary": "I opened the Experiments page by tapping Experiments in the main navigation. It is now at /experiments with the heading \"My experiments\". The page also shows a \"Request saving access\" notice, since new accounts need administrator approval before saving, and a \"Request access\" button.",
+    "startPath": "/",
+    "endPath": "/experiments",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "My experiments"
+      },
+      {
+        "role": "link",
+        "name": "Go to lab"
+      },
+      {
+        "text": "Request saving access"
+      },
+      {
+        "text": "New accounts need administrator approval before saving. You can keep simulating meanwhile."
+      },
+      {
+        "role": "button",
+        "name": "Request access"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "name": "Simulation world"
+      },
+      {
+        "text": "Cycle"
+      },
+      {
+        "text": "Running"
+      },
+      {
+        "text": "Plants"
+      },
+      {
+        "text": "Herbivores"
+      },
+      {
+        "text": "Predators"
+      },
+      {
+        "role": "listitem",
+        "name": "Explore"
+      },
+      {
+        "role": "listitem",
+        "name": "Search Food"
+      }
+    ],
+    "endWaitMs": 12760,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

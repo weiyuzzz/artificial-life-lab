@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "second-user-private",
+    "kind": "interactive",
+    "goal": "A second signed-in user cannot see the first user's saved experiment",
+    "requirementIndexes": [
+      26
+    ],
+    "acceptanceCriteriaIndexes": [
+      10
+    ],
+    "persona": "second-user",
+    "steps": [
+      "Sign in",
+      "Press EN in the language toggle",
+      "Open the Experiments page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Artificial Life Lab"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Herbivore"
+      },
+      {
+        "afterStep": 2,
+        "expectNoText": "Rivera Run"
+      }
+    ]
+  }
+}

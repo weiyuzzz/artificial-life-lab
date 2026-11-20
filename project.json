@@ -1,0 +1,25 @@
+{
+  "overview": "A dark scientific lab where a real artificial life simulation runs in the browser: plants, herbivores and predators with heritable genomes and neural networks evolve through natural selection.",
+  "features": [
+    "Live 2D ecosystem with plants, herbivores, predators, zones and decaying corpses",
+    "Genomes and small heritable neural networks that drive each organism's behavior",
+    "Pause, step, 1x to 25x speed and fast-forward a chosen number of cycles",
+    "Zoomable, pannable canvas with selection, hover info, trails and vision ranges",
+    "Organism inspector with genes, neural network, ancestors and descendants",
+    "Population dashboard, live charts and an evolution timeline from real data",
+    "Environment controls and five experiment events",
+    "Save experiments and snapshots after sign-in and admin approval, with seeded replay",
+    "JSON and CSV export, JSON import and overlay comparison of two experiments",
+    "Chinese and English interface toggle"
+  ],
+  "category": "simulation",
+  "tags": [
+    "artificial-life",
+    "evolution",
+    "simulation",
+    "data-visualization",
+    "science",
+    "neural-network"
+  ],
+  "last_updated": "2026-11-20T16:24:19.317Z"
+}

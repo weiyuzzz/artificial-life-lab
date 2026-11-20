@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-20T17:27:45.246Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"EN\" in \"中文\"",
+        "target": {
+          "role": "button",
+          "name": "EN",
+          "within": "中文"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "save-experiment.e2e.ts::save-experiment",
+      "targetId": "web",
+      "instructionDigest": "ac56285b5d642033092bebf7e9e3adcef36b61641d09be599119d777ce4eb944",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "anthropic.messages",
+      "model": "claude-opus-5-5"
+    },
+    "summary": "Pressed EN. EN now shows as pressed, and the app's text is in English: the tabs read Inspector, Dashboard, Environment and Experiment, and the navigation reads Lab, Experiments, Compare and Access.",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "text": "Artificial Life Lab— 人工生命进化实验室"
+      },
+      {
+        "role": "link",
+        "name": "Lab"
+      },
+      {
+        "role": "link",
+        "name": "Experiments"
+      },
+      {
+        "role": "link",
+        "name": "Compare"
+      },
+      {
+        "role": "link",
+        "name": "Access"
+      },
+      {
+        "role": "button",
+        "name": "中文"
+      },
+      {
+        "role": "button",
+        "name": "EN",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "name": "Simulation world"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "人工生命进化实验室— Artificial Life Lab"
+      },
+      {
+        "role": "link",
+        "name": "实验台"
+      },
+      {
+        "role": "link",
+        "name": "实验库"
+      },
+      {
+        "role": "link",
+        "name": "对比"
+      },
+      {
+        "role": "link",
+        "name": "访问审批"
+      },
+      {
+        "role": "button",
+        "name": "中文",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "EN"
+      },
+      {
+        "name": "模拟世界"
+      }
+    ],
+    "endWaitMs": 15074,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

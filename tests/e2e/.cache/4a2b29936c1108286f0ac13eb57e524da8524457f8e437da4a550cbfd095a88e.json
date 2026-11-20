@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-20T17:26:32.717Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap tab \"Dashboard\"",
+        "target": {
+          "role": "tab",
+          "name": "Dashboard"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "lab-runs.e2e.ts::lab-runs",
+      "targetId": "web",
+      "instructionDigest": "1a9734a8858d240d55512e2ccf7c2026665f231cde57048b915015c32e3658e2",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "anthropic.messages",
+      "model": "claude-opus-5-5"
+    },
+    "summary": "I opened the Dashboard tab, and it now shows as selected. Its Evolution timeline region lists Drought as active with \"600 cycles left\", and the timeline has the entry \"Event triggered: Drought C356/Generation 2\".",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Population"
+      },
+      {
+        "text": "Births"
+      },
+      {
+        "text": "Deaths"
+      },
+      {
+        "text": "Max generation"
+      },
+      {
+        "role": "columnheader",
+        "name": "Species"
+      },
+      {
+        "role": "columnheader",
+        "name": "Age"
+      },
+      {
+        "role": "columnheader",
+        "name": "Energy"
+      },
+      {
+        "role": "columnheader",
+        "name": "Reproduction"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Environment parameters"
+      },
+      {
+        "role": "button",
+        "name": "Restore defaults"
+      },
+      {
+        "text": "Some changes only apply when the world is reset."
+      },
+      {
+        "text": "Temperature °C"
+      },
+      {
+        "role": "spinbutton",
+        "name": "Temperature °C",
+        "value": "20.0"
+      },
+      {
+        "text": "Live"
+      },
+      {
+        "text": "Plant growth rate"
+      },
+      {
+        "role": "spinbutton",
+        "name": "Plant growth rate",
+        "value": "1.00"
+      }
+    ],
+    "endWaitMs": 13517,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

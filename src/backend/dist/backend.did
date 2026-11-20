@@ -1,0 +1,250 @@
+type Value = 
+ variant {
+   "bool": bool;
+   float: float64;
+   "int": int;
+   "nat": nat;
+   "null";
+   "text": text;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type UserApprovalInfo = 
+ record {
+   "principal": principal;
+   status: ApprovalStatus;
+ };
+type Timestamp = int;
+type Time = int;
+type StatChunkPage = 
+ record {
+   chunks: vec StatChunk;
+   total: nat;
+ };
+type StatChunk = 
+ record {
+   chunkIndex: nat;
+   createdAt: Timestamp;
+   data: text;
+   experimentId: ExperimentId;
+ };
+type SnapshotView = 
+ record {
+   auto: bool;
+   caption: text;
+   createdAt: Timestamp;
+   cycle: nat;
+   experimentId: ExperimentId;
+   id: SnapshotId;
+   partCount: nat;
+   uploadedParts: nat;
+ };
+type SnapshotPartPage = 
+ record {
+   parts: vec SnapshotPart;
+   total: nat;
+ };
+type SnapshotPart = 
+ record {
+   data: text;
+   partIndex: nat;
+   snapshotId: SnapshotId;
+ };
+type SnapshotInput = 
+ record {
+   auto: bool;
+   caption: text;
+   cycle: nat;
+   partCount: nat;
+ };
+type SnapshotId = nat;
+type Result__1 = 
+ record {
+   hasMore: bool;
+   rows: vec vec Cell;
+ };
+type Result_8 = 
+ variant {
+   err: Error;
+   ok;
+ };
+type Result_7 = 
+ variant {
+   err: ApiError;
+   ok: StatChunk;
+ };
+type Result_6 = 
+ variant {
+   err: ApiError;
+   ok: SnapshotView;
+ };
+type Result_5 = 
+ variant {
+   err: ApiError;
+   ok: SnapshotPartPage;
+ };
+type Result_4 = 
+ variant {
+   err: ApiError;
+   ok: vec SnapshotView;
+ };
+type Result_3 = 
+ variant {
+   err: ApiError;
+   ok: StatChunkPage;
+ };
+type Result_2 = 
+ variant {
+   err: ApiError;
+   ok: nat;
+ };
+type Result_1 = 
+ variant {
+   err: ApiError;
+   ok;
+ };
+type Result = 
+ variant {
+   err: ApiError;
+   ok: Experiment;
+ };
+type Redemption = 
+ record {
+   at: Time;
+   user: principal;
+ };
+type RedeemResult = 
+ variant {
+   alreadyMember;
+   blocked;
+   expired;
+   invalid;
+   joined;
+   revoked;
+   usedUp;
+ };
+type InviteStatus = 
+ variant {
+   expired;
+   invalid;
+   revoked;
+   usedUp;
+   valid;
+ };
+type InviteInfo = 
+ record {
+   code: text;
+   createdAt: Time;
+   createdBy: principal;
+   expiresAt: opt Time;
+   maxUses: opt nat;
+   name: text;
+   redemptions: vec Redemption;
+   revoked: bool;
+ };
+type ExperimentInput = 
+ record {
+   envParams: text;
+   name: text;
+   populationConfig: text;
+   seed: nat;
+   summary: text;
+ };
+type ExperimentId = nat;
+type Experiment = 
+ record {
+   createdAt: Timestamp;
+   cycle: nat;
+   envParams: text;
+   id: ExperimentId;
+   name: text;
+   owner: principal;
+   populationConfig: text;
+   seed: nat;
+   summary: text;
+   updatedAt: Timestamp;
+ };
+type Error = 
+ variant {
+   AmbiguousAttribute: record {
+                         field: text;
+                         sources: vec text;
+                       };
+   FrontendOriginMismatch: record {
+                             expected: vec text;
+                             got: text;
+                           };
+   FrontendOriginsNotConfigured;
+   MalformedCandid;
+   MissingField: text;
+   MixedSsoSources: record {
+                      otherKeys: vec text;
+                      ssoKeys: vec text;
+                    };
+   NoAttributes;
+   Stale: record {ageNs: nat;};
+   UnknownNonce;
+   UntrustedSsoSource: record {domain: text;};
+ };
+type Cell = 
+ record {
+   name: text;
+   value: Value;
+ };
+type ApprovalStatus = 
+ variant {
+   approved;
+   pending;
+   rejected;
+ };
+type ApiError = 
+ variant {
+   invalidInput: text;
+   notAuthorized;
+   notFound;
+ };
+service : {
+  _initialize_access_control: () -> ();
+  _internet_identity_sign_in_finish: () -> (Result_8);
+  _internet_identity_sign_in_start: () -> (blob);
+  appendStatChunk: (experimentId: ExperimentId, chunkIndex: nat, data:
+   text) -> (Result_7);
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  checkInvite: (code: text) -> (InviteStatus) query;
+  createExperiment: (input: ExperimentInput) -> (Result);
+  createInvite: (name: text, maxUses: opt nat, expiresAt: opt Time) -> (text);
+  createSnapshot: (experimentId: ExperimentId, input: SnapshotInput) ->
+   (Result_6);
+  deleteExperiment: (id: ExperimentId) -> (Result_1);
+  deleteSnapshot: (snapshotId: SnapshotId) -> (Result_1);
+  execute: (qJson: text) -> (Result__1) query;
+  getApiDoc: () -> (text) query;
+  getCallerUserRole: () -> (UserRole) query;
+  getExperiment: (id: ExperimentId) -> (opt Experiment) query;
+  getSnapshotParts: (snapshotId: SnapshotId, offset: nat, limit: nat) ->
+   (Result_5) query;
+  isCallerAdmin: () -> (bool) query;
+  isCallerApproved: () -> (bool) query;
+  listApprovals: () -> (vec UserApprovalInfo) query;
+  listInvites: () -> (vec InviteInfo) query;
+  listMyExperiments: () -> (vec Experiment) query;
+  listSnapshots: (experimentId: ExperimentId) -> (Result_4) query;
+  listStatChunks: (experimentId: ExperimentId, offset: nat, limit: nat) ->
+   (Result_3) query;
+  pruneAutoSnapshots: (experimentId: ExperimentId, keep: nat) -> (Result_2);
+  putSnapshotPart: (snapshotId: SnapshotId, partIndex: nat, data: text) ->
+   (Result_1);
+  redeemInvite: (code: text) -> (RedeemResult);
+  removeApproval: (user: principal) -> ();
+  renameExperiment: (id: ExperimentId, name: text) -> (Result);
+  requestApproval: () -> ();
+  revokeInvite: (code: text) -> ();
+  schema: () -> (text) query;
+  setApproval: (user: principal, status: ApprovalStatus) -> ();
+  updateExperimentProgress: (id: ExperimentId, cycle: nat, summary: text) ->
+   (Result);
+}

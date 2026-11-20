@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "save-experiment",
+    "kind": "interactive",
+    "goal": "The first signed-in user (admin) creates and saves an experiment, which is listed after a reload",
+    "requirementIndexes": [
+      24,
+      25,
+      27,
+      28,
+      29,
+      30
+    ],
+    "acceptanceCriteriaIndexes": [
+      6,
+      7,
+      9
+    ],
+    "steps": [
+      "Sign in",
+      "Press EN in the language toggle",
+      "Open the Experiment tab",
+      "Create a new experiment named Rivera Run and press Create",
+      "Open the Experiments page",
+      "Reload the page",
+      "Open the Experiments page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Artificial Life Lab"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Herbivore"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Export JSON"
+      },
+      {
+        "afterStep": 3,
+        "expectText": "Rivera Run"
+      },
+      {
+        "afterStep": 4,
+        "expectText": "Rivera Run"
+      },
+      {
+        "afterStep": 5,
+        "expectText": "Artificial Life Lab"
+      },
+      {
+        "afterStep": 6,
+        "expectText": "Rivera Run"
+      }
+    ]
+  }
+}
